@@ -31,179 +31,173 @@
             github.com/Xiaoxiao-Liu
           </a>
         </div>
+        <div class="pill">
+          <span class="icon">📚</span>
+          <a href="https://scholar.google.com/citations?user=w4MmKkUAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">
+            Google Scholar
+          </a>
+        </div>
       </div>
     </header>
 
     <main>
-      <!-- Left column: profile + projects -->
-      <div>
-        <section>
-          <h2>Professional Profile</h2>
-          <div class="card profile-text">
-            Applied NLP/ML researcher focused on developing ReAct-style multi-agent systems for medical AI
-            applications. Experienced in SFT for domain adaptation, along with knowledge distillation,
-            reinforcement-learning–based evaluation, and RAG-driven clinical information retrieval.
-            <br><br>
-            Proven track record in translating LLM research into deployable medical AI services, including
-            hospital-integrated clinical dialogue and referral models. Recent work centers on LLM robustness,
-            multi-agent reasoning, and efficient model adaptation for clinical decision-support scenarios.
-          </div>
-        </section>
+      <section>
+        <h2>Professional Profile</h2>
+        <div class="card profile-text">
+          Applied NLP/ML researcher focused on developing ReAct-style multi-agent systems for medical AI
+          applications. Experienced in SFT for domain adaptation, along with knowledge distillation,
+          reinforcement-learning–based evaluation, and RAG-driven clinical information retrieval.
+          <br><br>
+          Proven track record in translating LLM research into deployable medical AI services, including
+          hospital-integrated clinical dialogue and referral models. Recent work centers on LLM robustness,
+          multi-agent reasoning, and efficient model adaptation for clinical decision-support scenarios.
+        </div>
+      </section>
 
-        <section>
-          <h2>Research &amp; Project Experience</h2>
+      <section>
+        <h2>Research &amp; Project Experience</h2>
           <div class="card">
             <!-- Project 1 -->
             <div class="project-block">
-              <div class="item-header">
-                <div class="item-title">
-                  Evidence-based Medical Guidelines Adaptation, CUHKSZ
+              <div class="project-content">
+                <div class="item-header">
+                  <div class="item-title">
+                    Evidence-based Medical Guidelines Adaptation, CUHKSZ
+                  </div>
+                  <div class="item-meta">
+                    May 2025 – Present
+                  </div>
                 </div>
-                <div class="item-meta">
-                  May 2025 – Present
-                </div>
+                <div class="item-location">Shenzhen, China</div>
+                <ul class="compact">
+                   
+                        A medical guideline adaptation system that integrates retrieval, evidence synthesis,
+                        and rule-based validation to support localized clinical guideline generation.
+                     
+                        The workflow incorporates multi-agent coordination, guideline document parsing,
+                        and structured quality checking for downstream clinical decision support.
+                      
+                </ul>
+                
               </div>
-              <div class="item-location">Shenzhen, China</div>
-              <ul class="compact">
-                <li>
-                  Built a medical guideline generation workflow: designed ReAct-based agents for retrieval,
-                  guideline parsing, and quality checking. Trained a checklist judger (Qwen2-3B) with GRPO on
-                  4×A100 GPUs (Slurm) using TRL/PyTorch, with experiment tracking via Weights&amp;Biases.
-                </li>
-                <li>
-                  Developed an in-house guideline corpus (2K+ de-duplicated documents) with automated cleaning
-                  and normalization. Constructed a FAISS-based RAG retriever with cached embeddings and scheduled
-                  batch indexing via Slurm array jobs.
-                </li>
-                <li>
-                  Deployed retrieval and agent-routing logic as a Flask REST service.
-                </li>
-              </ul>
               <!-- 图片占位：指南系统/agent 流程图、界面截图等 -->
-              <div class="project-image-placeholder">
-                Project image placeholder – guideline adaptation system (e.g., agent workflow diagram or UI screenshot)
-                <br>
-                <!-- 示例：将下面一行替换为你的图片路径 -->
-                <!-- <img src="images/guideline-project.png" alt="Guideline Adaptation Project Screenshot"> -->
+              <div class="project-image-wrapper">
+                <div class="project-image-placeholder">
+                  <a href="https://github.com/Xiaoxiao-Liu/Evidence-based-Medical-Guideline-Adaptation.git" target="_blank" rel="noopener noreferrer">
+                    
+                    <br>
+                    <!-- 示例：将下面一行替换为你的图片路径，并更新上面的 href 为项目链接 -->
+                    <img src="images/pico-workflow.png" alt="Guideline Adaptation Project Screenshot"> 
+                  </a>
+                </div>
               </div>
             </div>
 
             <!-- Project 2 -->
             <div class="project-block">
-              <div class="item-header">
-                <div class="item-title">
-                  LLMs for Medical Outpatient Referral, CUHKSZ
+              <div class="project-content">
+                <div class="item-header">
+                  <div class="item-title">
+                    LLMs for Medical Outpatient Referral, CUHKSZ
+                  </div>
+                  <div class="item-meta">
+                    Jul 2024 – Mar 2025
+                  </div>
                 </div>
-                <div class="item-meta">
-                  Jul 2024 – Mar 2025
-                </div>
+                <div class="item-location">Shenzhen, China</div>
+                <ul class="compact">
+                 
+                        An intelligent outpatient-referral system designed to support medical triage through
+                        large language models and structured clinical reasoning.
+                     
+                        The project includes a dynamic multi-agent evaluation framework that simulates
+                        real-world referral scenarios to assess model stability and decision accuracy.
+                   
+                </ul>
+                
               </div>
-              <div class="item-location">Shenzhen, China</div>
-              <ul class="compact">
-                <li>
-                  Built a scalable Selenium-based medical data pipeline generating 5k+ disease samples and 100k+
-                  structured cases, providing high-quality inputs for downstream LLM training.
-                </li>
-                <li>
-                  Fine-tuned a medical reasoning model based on Qwen-32B via LLaMA-Factory SFT with curriculum
-                  data mixing (general:medical = 3:1 → 1:3), DeepSpeed ZeRO-3, Tensor+Pipeline Parallelism, bf16
-                  mixed precision, FlashAttention, and memory-efficient distributed training on 8×A100-80GB,
-                  achieving a 16% accuracy improvement.
-                </li>
-                <li>
-                  Built a lightweight multi-agent evaluation framework simulating dynamic outpatient-referral
-                  scenarios to measure model stability and referral accuracy under multi-turn interactions.
-                </li>
-                <li>
-                  Deployed the optimized model as a production API service (vLLM), enabling hospital outpatient
-                  platforms to access the referral model via API calls; supported 200+ daily users and 1M+ total
-                  interactions with monitoring dashboards and continuous updates.
-                </li>
-              </ul>
               <!-- 图片占位：数据 pipeline 图、multi-agent demo 截图、dashboard 图等 -->
-              <div class="project-image-placeholder">
-                Project image placeholder – outpatient referral system
-                <br>
-                <!-- <img src="images/outpatient-referral.png" alt="Outpatient Referral Project Screenshot"> -->
+              <div class="project-image-wrapper">
+                <div class="project-image-placeholder">
+                  <a href="https://github.com/Xiaoxiao-Liu/IOR-Bench.git" target="_blank" rel="noopener noreferrer">
+                   
+                    <br>
+                    <img src="images/ior-pipeline.png" alt="Outpatient Referral Project Screenshot"> 
+                  </a>
+                </div>
               </div>
             </div>
 
             <!-- Project 3 -->
             <div class="project-block">
-              <div class="item-header">
-                <div class="item-title">
-                  Product Recommendation for E-commerce Platforms, Hstyle
+              <div class="project-content">
+                <div class="item-header">
+                  <div class="item-title">
+                    Product Recommendation for E-commerce Platforms, Hstyle
+                  </div>
+                  <div class="item-meta">
+                    Jun 2018 – Aug 2018
+                  </div>
                 </div>
-                <div class="item-meta">
-                  Jun 2018 – Aug 2018
-                </div>
+                <div class="item-location">Jinan, China</div>
+                <ul class="compact">
+                 
+                        An e-commerce recommendation engine that combines collaborative filtering,
+                        association-rule mining, and content-based ranking to improve product relevance.
+                     
+                        The system uses distributed data processing and real-time indexing to deliver
+                        scalable and high-quality recommendations across multiple product categories.
+                     
+                </ul>
+                
               </div>
-              <div class="item-location">Shanghai, China</div>
-              <ul class="compact">
-                <li>
-                  Developed a large-scale recommendation pipeline using collaborative filtering (ALS),
-                  FP-Growth association rules, and content-based matching on historical purchase logs.
-                </li>
-                <li>
-                  Built distributed data-processing workflows in PySpark, generating Spark DataFrames for model
-                  training and integrating Elasticsearch for fast retrieval and indexing.
-                </li>
-                <li>
-                  Improved recommendation relevance by 18% (precision@K) via feature engineering, negative
-                  sampling, and iterative validation.
-                </li>
-              </ul>
               <!-- 图片占位：推荐系统架构图、结果可视化图等 -->
-              <div class="project-image-placeholder">
-                Project image placeholder – e-commerce recommendation pipeline
-                <br>
-                <!-- <img src="images/ecommerce-reco.png" alt="E-commerce Recommendation Screenshot"> -->
+              <div class="project-image-wrapper">
+                <div class="project-image-placeholder">
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    Project image placeholder – e-commerce recommendation pipeline
+                    <br>
+                    <!-- <img src="images/ecommerce-reco.png" alt="E-commerce Recommendation Screenshot"> -->
+                  </a>
+                </div>
               </div>
             </div>
 
             <!-- Project 4 -->
             <div class="project-block">
-              <div class="item-header">
-                <div class="item-title">
-                  E-commerce Campaign Sales Forecasting, Hstyle
+              <div class="project-content">
+                <div class="item-header">
+                  <div class="item-title">
+                    E-commerce Campaign Sales Forecasting, Hstyle
+                  </div>
+                  <div class="item-meta">
+                    Apr 2018 – Jul 2018
+                  </div>
                 </div>
-                <div class="item-meta">
-                  Apr 2018 – Jul 2018
-                </div>
+                <div class="item-location">Jinan, China</div>
+                <ul class="compact">
+                  A predictive analytics system that forecasts campaign sales volumes using historical product
+                    data and machine learning models to support inventory and merchandising decisions.
+                  
+                </ul>
+                
               </div>
-              <div class="item-location">Shanghai, China</div>
-              <ul class="compact">
-                <li>
-                  Built a machine learning–based forecasting system for predicting sales volumes during
-                  e-commerce promotional campaigns; conducted full data processing with NumPy/Pandas
-                  (normalization, outlier removal, correlation analysis) and performed comprehensive EDA using
-                  Matplotlib/Seaborn to identify demand-shaping features.
-                </li>
-                <li>
-                  Trained and evaluated predictive models including linear regression, random forests, and
-                  feature-based regressors with k-fold cross-validation, improving forecasting accuracy and
-                  providing data-driven insights for merchandising and inventory planning.
-                </li>
-                <li>
-                  Achieved a 22% reduction in forecasting error (MAPE) compared to baseline heuristics,
-                  enabling more accurate inventory planning for selected apparel categories.
-                </li>
-              </ul>
               <!-- 图片占位：预测模型结果曲线、dashboard 截图等 -->
-              <div class="project-image-placeholder">
-                Project image placeholder – campaign forecasting models
-                <br>
-                <!-- <img src="images/campaign-forecast.png" alt="E-commerce Forecasting Screenshot"> -->
+              <div class="project-image-wrapper">
+                <div class="project-image-placeholder">
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    Project image placeholder – campaign forecasting models
+                    <br>
+                    <!-- <img src="images/campaign-forecast.png" alt="E-commerce Forecasting Screenshot"> -->
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </section>
-      </div>
+      </section>
 
-      <!-- Right column: education, publications, employment -->
-      <div>
-        <section class="aside-section">
-          <h2>Education</h2>
+      <section>
+        <h2>Education</h2>
           <div class="card">
             <div class="item-header">
               <div class="item-title">Bournemouth University, UK</div>
@@ -233,28 +227,32 @@
               Master of Translation and Interpreting (Distinction) – Chinese–English
             </div>
           </div>
-        </section>
+      </section>
 
-        <section class="aside-section">
-          <h2>Publications (Selected)</h2>
+      <section>
+        <h2>Publications</h2>
           <div class="card">
             <div class="tag" style="margin-bottom: 8px;">Conference</div>
             <ul class="pub-list">
               <li>
                 X. Liu and B. Wang et al., “Large language models for outpatient referral:
                 Problem definition, benchmarking and challenges,” under review, AAAI, 2026.
+                <a class="pub-link" href="https://arxiv.org/pdf/2503.08292" target="_blank" rel="noopener noreferrer">Add link</a>
               </li>
               <li>
                 N. Rusnachenko, X. Liu, J. Chang, and J. J. Zhang, “Distil-tuning for decoder-based transformers,”
                 BioASQ at CLEF, 2025.
+                <a class="pub-link" href="#" target="_blank" rel="noopener noreferrer">Add link</a>
               </li>
               <li>
                 X. Liu, M. Huang, N. Rusnachenko, J. Ive, J. Chang, and J. J. Zhang, “Enhancing medical dialogue
                 summarization: A MediExtract distillation framework,” IEEE BIBM, 2024.
+                <a class="pub-link" href="#" target="_blank" rel="noopener noreferrer">Add link</a>
               </li>
               <li>
                 X. Liu, J. Chang, and J. J. Zhang, “Knowledge-grounded dialogue generation for medical conversations:
                 A survey,” Information Visualisation (IV), 2023.
+                <a class="pub-link" href="#" target="_blank" rel="noopener noreferrer">Add link</a>
               </li>
             </ul>
 
@@ -264,17 +262,19 @@
                 X. Liu, E. Fernado, J. Ive, et al., “Comparative analysis of synthetic medical datasets:
                 A study on usability for language model fine-tuning,” under review, BMC Medical Informatics and
                 Decision Making.
+                <a class="pub-link" href="#" target="_blank" rel="noopener noreferrer">Add link</a>
               </li>
               <li>
                 X. Liu, M. S. Alharbi, J. Chen, et al., “Visualization resources: A survey,”
                 Information Visualization, vol. 22, no. 1, pp. 3–30, 2023.
+                <a class="pub-link" href="#" target="_blank" rel="noopener noreferrer">Add link</a>
               </li>
             </ul>
           </div>
-        </section>
+      </section>
 
-        <section class="aside-section">
-          <h2>Employment</h2>
+      <section>
+        <h2>Employment</h2>
           <div class="card">
             <div class="item-header">
               <div class="item-title">Shandong College of Electronic Technology, China</div>
@@ -289,8 +289,7 @@
               work in LLM-based medical AI.
             </p>
           </div>
-        </section>
-      </div>
+      </section>
     </main>
 
     <footer>

@@ -102,15 +102,9 @@ header {
 }
 
 main {
-  display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-  gap: 20px;
-}
-
-@media (max-width: 820px) {
-  main {
-    grid-template-columns: minmax(0, 1fr);
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 section {
@@ -195,6 +189,9 @@ ul.compact li {
   margin-bottom: 16px;
   padding-bottom: 14px;
   border-bottom: 1px dashed var(--border);
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
 }
 
 .project-block:last-child {
@@ -202,8 +199,36 @@ ul.compact li {
   padding-bottom: 0;
 }
 
+.project-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.project-link {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.project-link a {
+  color: var(--accent);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.project-link a::after {
+  content: "↗";
+  font-size: 12px;
+}
+
+.project-image-wrapper {
+  flex-shrink: 0;
+  width: 200px;
+}
+
 .project-image-placeholder {
-  margin-top: 8px;
   padding: 10px;
   border-radius: 12px;
   border: 1px dashed #cbd5f5;
@@ -214,7 +239,21 @@ ul.compact li {
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 70px;
+  min-height: 120px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-image-placeholder:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(54, 92, 255, 0.15);
+}
+
+.project-image-placeholder a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
 }
 
 /* 如果你之后有真实截图，可以改成 img 样式 */
@@ -222,6 +261,16 @@ ul.compact li {
   max-width: 100%;
   border-radius: 12px;
   display: block;
+}
+
+@media (max-width: 768px) {
+  .project-block {
+    flex-direction: column;
+  }
+  
+  .project-image-wrapper {
+    width: 100%;
+  }
 }
 
 .pub-list {
@@ -234,9 +283,22 @@ ul.compact li {
   margin-bottom: 6px;
 }
 
-.aside-section + .aside-section {
-  margin-top: 16px;
+.pub-link {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
+  margin-left: 6px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
+
+.pub-link::after {
+  content: "↗";
+  font-size: 11px;
+}
+
 
 footer {
   margin-top: 28px;
